@@ -89,7 +89,7 @@ app.get("/scraped-data", async (req, res) => {
     }
 
     await browser.close();
-
+    console.log(scrapedData);
     res.json(scrapedData);
   })();
 });
