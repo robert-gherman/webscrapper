@@ -35,9 +35,8 @@ function Section() {
         disabled
       />
       <button
-        className={`my-4 text-2xl btn btn-neutral  ${
-          loading ? "cursor-not-allowed" : ""
-        }`}
+        disabled={loading}
+        className={`my-4 text-2xl btn btn-neutral`}
         onClick={() => handleInput()}
       >
         Fetch
