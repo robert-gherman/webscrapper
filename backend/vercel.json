@@ -3,14 +3,14 @@
   "name": "webscraper",
   "builds": [
     {
-      "src": "../src/App.jsx",
+      "src": "server.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "../src/App.jsx"
+      "dest": "/server.js"
     }
   ]
 }
