@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const swaggerUi = require("swagger-ui-express");
+const swaggerDocument = require("./swagger.json");
 
 app.use(cors());
 const { firefox } = require("playwright");
@@ -93,6 +95,8 @@ app.get("/scraped-data", async (req, res) => {
     res.json(scrapedData);
   })();
 });
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 const PORT = 3000;
 app.listen(PORT, () => {

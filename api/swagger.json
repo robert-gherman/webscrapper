@@ -1,0 +1,65 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "web scraper",
+    "description": "Retrieves scraped data from a website, performs sentiment analysis, and returns the processed data.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "web scraper"
+    },
+    {
+      "url": "http://localhost:3000",
+      "description": "web scraper"
+    }
+  ],
+  "paths": {
+    "/scraped-data": {
+      "get": {
+        "tags": ["Scraped Data"],
+        "description": "Get scraped data from the website.",
+        "operationId": "getScrapedData",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "title": {
+                        "type": "string"
+                      },
+                      "image": {
+                        "type": "string"
+                      },
+                      "short_description": {
+                        "type": "string"
+                      },
+                      "href": {
+                        "type": "string"
+                      },
+                      "content": {
+                        "type": "string"
+                      },
+                      "sentiment": {
+                        "type": "string"
+                      },
+                      "words": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
